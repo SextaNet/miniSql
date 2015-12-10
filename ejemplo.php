@@ -1,26 +1,16 @@
 <?php
 
-require "simple/simple.php";
+require "miniSql/miniSql.php";
 
-$table = new Simple\Simple([
-	"db"	 => "test",
-	"table"  => "ejemplo",
+$table = new MiniSql\MiniSql([
+	"db"	 => "blog",
+	"table"  => "articulos",
 	"user"   => "root",
 	"pass"   => ""
 ]);
 
-$where_1 = $table->where([
-	["name" => "like(%m%)"],
-	["name" => "like(%j%)"],
-	["age"  => "range(0-50)"]
+$ejemplo = $table->where([
+	"id"=>"1"
 ]);
-
-$data = json_encode( $where_1->select() );
-
-echo "
-	{$data}
-	<br><hr><br>
-	{$where_1->query}
-";
-
 	
+echo json_encode($ejemplo->select());

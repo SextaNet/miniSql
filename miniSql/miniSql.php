@@ -1,7 +1,7 @@
 <?php 
-namespace Simple;
+namespace MiniSql;
 use \PDO;
-class Simple{
+class MiniSql{
 	// configuracion de la instancia
 	private $process = [];
 	// datos de preconfiguracion de coneccion
@@ -15,7 +15,7 @@ class Simple{
 		"table" => ""
 	];
 	// estado inicial de la coneccion
-	private $connect = false;
+	public $connect = false;
 	// expreciones regulares de funciones
 	private $regexp = [
 		"function"  => "/([\w\d\-_\"\']+){1}\(([\w\d\-_\n\t\s\"\'.,<>=?!$%&]+){1}\)/",
@@ -255,15 +255,19 @@ class Simple{
 	arma la consulta de selecion
 	*/	
 	public function select($op1=null,$op2=null,$op3=null){
-		$return = [];
-		foreach ($this->setSelect($op1,$op2,$op3) as $value){
-			$prepare = [];
-			foreach ($value as $key => $val) {
-				if(!is_integer($key)){
-					$prepare[$key]=$val;
+		$return = false;
+		$query  = $this->setSelect($op1,$op2,$op3);
+		if($query){
+			$return = [];
+			foreach ($query as $value){
+				$prepare = [];
+				foreach ($value as $key => $val) {
+					if(!is_integer($key)){
+						$prepare[$key]=$val;
+					}
 				}
+				array_push($return,$prepare);
 			}
-			array_push($return,$prepare);
 		}
 		return $return;
 	}
