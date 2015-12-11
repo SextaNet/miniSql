@@ -1,4 +1,4 @@
-# simpleSql
+# miniSql
 ###### por [Matias Trujillo](http://www.upp.cl)
 Personalmente no me gusta sql (pero se que es bueno) , pero dado que poseo algunos servicios funcionando con el y la necesidad de sostener consultar **SQL simples, no complejas**, cree una serie de métodos para manipular **tablas sql**, de forma mas legible y escalable a condiciones y con valores concadenables de forma mas explicita en un array.
 
