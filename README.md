@@ -1,6 +1,9 @@
 # miniSql
 ###### por [Matias Trujillo](http://www.upp.cl)
-Personalmente no me gusta sql (pero se que es bueno) , pero dado que poseo algunos servicios funcionando con el y la necesidad de sostener consultar **SQL simples, no complejas**, cree una serie de métodos para manipular **tablas sql**, de forma mas legible y escalable a condiciones y con valores concadenables de forma mas explicita en un array.
+Personalmente no me gusta MySQL (sé que es bueno), pero dado que poseo algunos servicios funcionando con él y la necesidad de sostener consultas **SQL simples, no complejas**, creé una serie de métodos para manipular **tablas sql**, de forma mas legible y escalable a condiciones y con valores concadenables de forma mas explicita en un array.
+
+English:
+Personally, i don't like MySQL (i know it is good), but thinking that i have some service working with it and the need to have queries **simples SQL, not complex**, i was created some methods to manipulate **sql tables**, in a more simple way and scalable, with concatenated values more explicitly in an array. 
 
 > Recomendación personal, conozca **SLIM 3 PHP**, este es un framework que se asemeja a **EXPRESS de NODE.JS**, este además aplica el estándar **PSR**, lo invito a visitar la página oficial de **SLIM**, de hecho, mis pequeñas herramientas para php las creo pensando en el uso con **SLIM**
 
@@ -8,12 +11,12 @@ Personalmente no me gusta sql (pero se que es bueno) , pero dado que poseo algun
 por medio del constructor podremos configurar la conexión al servicio **SQL** de nuestro agrado, en este caso **MYSQL**
 ```php
 $tabla_ejemplo = new Simple\Simple([
-    "sql"=>"mysql",             // defaul mysql
-    "host"=>"localhost",        // defaul localhost
-    "user"=>"root",             // defaul root
-    "pass"=>"",                 // defaul ""
+    "sql"=>"mysql",             // default mysql
+    "host"=>"localhost",        // default localhost
+    "user"=>"root",             // default root
+    "pass"=>"",                 // default ""
     "table"=>"ejemplo",         // requerido
-    "output"=>"json"            // defaul array
+    "output"=>"json"            // default array
 ]);
 ```
 #### Método WHERE
